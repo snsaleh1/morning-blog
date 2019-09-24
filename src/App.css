@@ -20,3 +20,15 @@
 .App-link {
   color: #09d3ac;
 }
+
+Nav {
+  display: flex;
+  background: rgb(196, 70, 54);
+  color: white;
+  height: 50px;
+  font-size: 20px;
+  margin: 10px;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
