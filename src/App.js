@@ -1,17 +1,53 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
-import Nav from './Nav';
-import Footer from './Footer';
+import Nav from './Nav'
+import Footer from './Footer'
 
-function App() {
-  return (
-    <div className="App">
+class App extends Component {
+  
+  state = {
+    isShowing : true,
+    posts : [
+      {
+        title : "My first Fam blog post.",
+        content : "I love Fam!!!  It's Lit!!!",
+        user : "TheOne614"
+      },
+      {
+        title: "Pandas are fun!",
+        content:  "They are funny as hell",
+        user: "CWill833"
+      }
+    ]
+
+  }
+   
+  handleClick = event => {
+    this.setState({
+      isShowing : !this.state.isShowing
+    })
+  }
+  render() {
+    
+    const title = <h1>Fam Blog!</h1>
+    const composedPosts = this.state.posts.map((item, index) => {
+      return (
+        <li key={index} className='post'>
+          <h3 className='postTitles'>{item.title}</h3>
+          <p>{item.content}</p>
+          <h6>{item.user}</h6>
+        </li>
+      )
+    })
+    return (
+    <div className="App container">
       <Nav />
-      <h1>FAM BLOG</h1>
+        {this.state.isShowing ? title : null}
+        <ul>{composedPosts}
+        </ul>
+        <button onClick={this.handleClick}>Click it Now!</button>
       <Footer />
     </div>
   );
-}
-
+}}
 export default App;
