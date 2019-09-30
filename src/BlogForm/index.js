@@ -17,17 +17,20 @@ class BlogForm extends Component {
     return (
         <form className="blog-form">
             <h1>{this.state.title}</h1>
+            <label>Title</label>
             <input 
             type="text" 
             name="title" 
             onChange={this.handleOnChange} 
             value={this.state.title} />
+            <label>Author</label>
             <input 
             type="text" 
             name="user" 
             onChange={this.handleOnChange}
             value={this.state.user} />
-            <input 
+            <label>New Post</label>
+            <textarea 
             type="text" 
             name="content" 
             onChange={this.handleOnChange}

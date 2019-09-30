@@ -45,7 +45,7 @@ class App extends Component {
         {this.state.isShowing ? title : null}
         <ul>{composedPosts}
         </ul>
-        <button onClick={this.handleClick}>Click it Now!</button>
+        <button className="button-primary" onClick={this.handleClick}>Add a damn post!</button>
       <Footer />
     </div>
   );
